@@ -1,0 +1,159 @@
+
+.deposit-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 45px 6%;
+}
+
+.deposit-heading {
+  margin-bottom: 30px;
+}
+
+.deposit-tag {
+  color: #b66dff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.deposit-heading h1 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.deposit-heading p {
+  color: #aaa0ba;
+  line-height: 1.7;
+}
+
+.deposit-card,
+.deposit-history {
+  padding: 28px;
+  background: #171225;
+  border: 1px solid #49305f;
+  border-radius: 16px;
+  margin-bottom: 25px;
+}
+
+.deposit-card h2,
+.deposit-history h2 {
+  font-size: 21px;
+  margin-bottom: 20px;
+}
+
+.deposit-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.deposit-card label {
+  color: #e8d9fa;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.deposit-card input,
+.deposit-card select {
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: #090711;
+  border: 1px solid #49305f;
+  border-radius: 10px;
+  outline: none;
+}
+
+.deposit-card input:focus,
+.deposit-card select:focus {
+  border-color: #a855f7;
+}
+
+.deposit-card input[type="file"] {
+  padding: 12px;
+}
+
+.receipt-preview {
+  padding: 15px;
+  background: #211631;
+  border-radius: 12px;
+}
+
+.receipt-preview img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.receipt-preview button {
+  margin-top: 12px;
+  padding: 10px 15px;
+  color: white;
+  background: #442044;
+  border: none;
+  border-radius: 8px;
+}
+
+.deposit-card form > button {
+  padding: 15px;
+  margin-top: 12px;
+  color: white;
+  background: linear-gradient(100deg, #8b5cf6, #b66dff);
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#depositStatus {
+  color: #c9a1f5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.deposit-empty {
+  padding: 25px;
+  text-align: center;
+  background: #211631;
+  color: #aaa0ba;
+  border-radius: 10px;
+}
+
+.deposit-notice {
+  padding: 20px;
+  background: #211631;
+  border-left: 4px solid #a855f7;
+  border-radius: 10px;
+  color: #c9bfd5;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+.deposit-notice h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.deposit-back {
+  display: inline-block;
+  margin-top: 25px;
+  color: #c9a1f5;
+}
+
+@media (max-width: 600px) {
+  .deposit-container {
+    padding: 30px 5%;
+  }
+
+  .deposit-heading h1 {
+    font-size: 26px;
+  }
+
+  .deposit-card,
+  .deposit-history {
+    padding: 20px;
+  }
+}
