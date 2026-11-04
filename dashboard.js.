@@ -1,35 +1,61 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("GROVANTA dashboard initialized.");
+  const sidebar = document.getElementById("sidebar");
+  const menuButton = document.getElementById("menuButton");
 
-  const sections = [
-    "overview",
-    "plans",
-    "transactions",
-    "referrals",
-    "notifications",
-    "support",
-    "profile",
-    "settings"
-  ];
+  // Mobile sidebar
+  if (sidebar && menuButton) {
+    menuButton.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+    });
 
-  sections.forEach(section => {
-    const element = document.getElementById(section);
+    document.addEventListener("click", (event) => {
+      if (
+        window.innerWidth <= 760 &&
+        sidebar.classList.contains("open") &&
+        !sidebar.contains(event.target) &&
+        !menuButton.contains(event.target)
+      ) {
+        sidebar.classList.remove("open");
+      }
+    });
+  }
 
-    if (element) {
-      element.setAttribute("data-dashboard-section", section);
+  // Load the registered member's display name if available.
+  const userNameElement = document.getElementById("userName");
+  const welcomeNameElement = document.getElementById("welcomeName");
+
+  let displayName = "Member";
+
+  try {
+    const savedUser = localStorage.getItem("grovantaUser");
+
+    if (savedUser) {
+      const user = JSON.parse(savedUser);
+
+      if (user && typeof user.first_name === "string") {
+        displayName = user.first_name.trim() || "Member";
+      } else if (user && typeof user.firstName === "string") {
+        displayName = user.firstName.trim() || "Member";
+      }
     }
-  });
+  } catch (error) {
+    console.warn("Unable to read saved profile information.");
+  }
+
+  if (userNameElement) {
+    userNameElement.textContent = displayName;
+  }
+
+  if (welcomeNameElement) {
+    welcomeNameElement.textContent = displayName + "!";
+  }
+
+  // Dashboard announcements are loaded from the page's existing
+  // announcement container when available.
+  const announcementList = document.getElementById("announcementList");
+
+  if (announcementList) {
+    announcementList.setAttribute("aria-live", "polite");
+  }
 });
-
-function formatDashboardCurrency(amount) {
-  return new Intl.NumberFormat("en-NG", {
-    style: "currency",
-    currency: "NGN",
-    minimumFractionDigits: 2
-  }).format(amount);
-}
-
-function showDashboardMessage(message) {
-  alert(message);
-}
