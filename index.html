@@ -3,301 +3,200 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#090711">
-<title>GROVANTA - Investment Platform</title>
-
+<title>GROVANTA V2</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{
- background:#090711;
- color:white;
- font-family:Arial,sans-serif;
- padding-bottom:80px;
-}
-:root{
- --purple:#8b5cf6;
- --light:#b66dff;
- --panel:#171225;
-}
-header{
- background:#110b20;
- padding:20px;
- display:flex;
- justify-content:space-between;
- align-items:center;
- border-bottom:1px solid #492477;
- position:sticky;top:0;z-index:5;
-}
-.logo{font-size:24px;font-weight:900;color:#c49aff}
-.logo span{color:white}
-button{
- background:linear-gradient(100deg,#7024ed,#a044ff);
- color:white;border:0;border-radius:10px;
- padding:13px 18px;font-weight:bold;
- cursor:pointer;
-}
-.container{max-width:850px;margin:auto;padding:18px}
-.page{display:none}
-.page.active{display:block}
-.card{
- background:var(--panel);
- border:1px solid #39215b;
- border-radius:15px;
- padding:18px;margin:15px 0;
-}
-h2{margin-bottom:12px}
-h3{margin-bottom:10px}
+body{background:#090711;color:white;font-family:Arial,sans-serif;padding-bottom:85px}
+:root{--purple:#8b5cf6;--panel:#171225;--border:#39215b}
+header{padding:18px;background:#110b20;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:23px;font-weight:900;color:#c49aff}
+.container{max-width:850px;margin:auto;padding:17px}
+.page{display:none}.page.active{display:block}
+h2{font-size:21px;margin-bottom:14px}
+h3{font-size:16px;margin-bottom:10px}
 .muted{color:#aaa1bd;font-size:13px}
-input,select,textarea{
- width:100%;padding:14px;margin:9px 0 15px;
- background:#0e0919;color:white;
- border:1px solid #503277;border-radius:9px;
-}
-label{font-size:13px;color:#c6b5df}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:17px;margin:13px 0}
+.balance{background:linear-gradient(130deg,#35116c,#170d30);border:1px solid #a45cff;border-radius:17px;padding:23px;margin:18px 0}
+.balance h1{font-size:29px;margin:12px 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.stat{background:#1b1230;border:1px solid #35204f;padding:13px 5px;text-align:center;border-radius:12px;font-size:12px}
+.stat strong{display:block;margin-top:9px;font-size:15px}
+.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.action{background:#1a112c;border:1px solid #48216d;padding:17px 4px;border-radius:12px;text-align:center;cursor:pointer;font-size:22px}
+.action b{display:block;font-size:12px;margin-top:8px}
+button{background:linear-gradient(100deg,#7024ed,#a044ff);border:0;color:white;padding:12px 16px;border-radius:9px;font-weight:bold;cursor:pointer}
 .full{width:100%}
-.balance{
- background:linear-gradient(130deg,#35116c,#170d30);
- border:1px solid #a45cff;border-radius:17px;
- padding:25px;margin:20px 0;
-}
-.balance h1{font-size:30px;margin:12px 0}
-.stats{
- display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
-}
-.stat{
- background:#1b1230;border:1px solid #35204f;
- border-radius:12px;padding:15px 7px;text-align:center;
- font-size:12px;
-}
-.stat strong{display:block;margin-top:8px;font-size:15px}
-.actions{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:10px;margin:20px 0;
-}
-.action{
- background:#1a112c;border:1px solid #48216d;
- padding:18px 5px;text-align:center;
- border-radius:13px;cursor:pointer;
-}
-.action b{display:block;margin-top:8px;font-size:13px}
-.plan{
- background:#1b1230;border:1px solid #492477;
- border-radius:14px;padding:18px;margin:13px 0;
-}
-.price{color:#c69aff;font-size:23px;font-weight:bold;margin:12px 0}
-.notice{
- background:#281b37;border-left:3px solid #a45cff;
- padding:13px;border-radius:8px;font-size:13px;
- line-height:1.5;margin:12px 0;
-}
-.hidden{display:none!important}
-nav{
- position:fixed;bottom:0;left:0;width:100%;
- background:#130c20;border-top:1px solid #432362;
- display:flex;justify-content:space-around;
- padding:10px 2px;z-index:10;
-}
-nav button{background:transparent;padding:8px 5px;font-size:11px;color:#b9a9ce}
+.plan{background:#1b1230;border:1px solid #492477;border-radius:14px;padding:18px;margin:12px 0}
+.price{font-size:23px;color:#c69aff;font-weight:bold;margin:10px 0}
+.notice{background:#281b37;border-left:3px solid #a45cff;padding:13px;border-radius:8px;font-size:13px;line-height:1.5;margin:12px 0}
+input,select,textarea{width:100%;padding:13px;background:#0e0919;color:white;border:1px solid #503277;border-radius:9px;margin:8px 0 14px}
+label{font-size:13px;color:#c6b5df}
+nav{position:fixed;bottom:0;left:0;width:100%;background:#130c20;border-top:1px solid #432362;display:flex;justify-content:space-around;padding:9px 2px;z-index:10}
+nav button{background:transparent;padding:8px 4px;font-size:11px;color:#b9a9ce}
 nav button.selected{color:#c28aff}
-@media(max-width:450px){
- .stats{grid-template-columns:1fr 1fr}
-}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.badge{font-size:11px;background:#39215b;color:#d6baff;padding:5px 9px;border-radius:20px}
+.item{padding:13px 0;border-bottom:1px solid #38244c;font-size:13px}
+.item:last-child{border:0}
+.hidden{display:none!important}
+@media(max-width:450px){.stats{grid-template-columns:1fr 1fr}}
 </style>
 </head>
-
 <body>
 
 <header>
- <div class="logo">GROVANTA<span>.</span></div>
- <button onclick="showPage('profile')">Profile</button>
+ <div class="logo">GROVANTA.</div>
+ <button onclick="showPage('notifications')">🔔 <span id="notificationCount">2</span></button>
 </header>
 
-<!-- AUTHENTICATION SCREEN -->
-<div id="login" class="container page active">
- <div style="text-align:center;padding:40px 0">
+<div id="login" class="container">
+ <div style="text-align:center;padding:35px 0">
   <div class="logo" style="font-size:38px">GROVANTA</div>
   <p class="muted">Grow Smarter. Build Your Future.</p>
  </div>
-
  <div class="card">
   <h2 id="authTitle">Create Account</h2>
   <div id="registerFields">
-   <label>First Name</label>
-   <input id="firstName" placeholder="First name">
-   <label>Last Name</label>
-   <input id="lastName" placeholder="Last name">
+   <label>First Name</label><input id="firstName" placeholder="First name">
+   <label>Last Name</label><input id="lastName" placeholder="Last name">
   </div>
-  <label>Phone Number</label>
-  <input id="phone" type="tel" placeholder="+234">
-  <label>Password</label>
-  <input id="password" type="password" placeholder="Password">
+  <label>Phone Number</label><input id="phone" placeholder="+234" type="tel">
+  <label>Password</label><input id="password" type="password" placeholder="At least 8 characters">
   <button class="full" onclick="authenticate()">Continue</button>
-  <p class="muted" style="margin-top:15px;text-align:center">
-   Already registered?
-   <a href="#" onclick="toggleAuth()" style="color:#c28aff">Login</a>
+  <p class="muted" style="text-align:center;margin-top:15px">
+   <a href="#" onclick="toggleAuth()" style="color:#c49aff">Switch between Register and Login</a>
   </p>
  </div>
- <p class="notice">This is a frontend demonstration. Secure account creation will be connected to the backend.</p>
+ <p class="notice">Demonstration interface. Account information is not yet connected to a secure server.</p>
 </div>
 
-<!-- APPLICATION -->
 <main id="app" class="hidden">
 <div class="container">
 
-<!-- HOME -->
 <section id="home" class="page active">
  <h2 id="welcome">Welcome to GROVANTA 👋</h2>
- <p class="muted">Your financial overview</p>
-
+ <p class="muted">Your account overview</p>
  <div class="balance">
   <p>Main Balance (Demo)</p>
   <h1>₦0.00</h1>
-  <p class="muted">Sample dashboard balance</p>
+  <p class="muted">Illustrative balance</p>
  </div>
-
  <div class="stats">
   <div class="stat">Task Balance<strong>₦0.00</strong></div>
   <div class="stat">Referral Balance<strong>₦0.00</strong></div>
   <div class="stat">Total Activity<strong>₦0.00</strong></div>
  </div>
-
- <h3 style="margin-top:25px">Quick Actions</h3>
+ <h3 style="margin-top:24px">Quick Actions</h3>
  <div class="actions">
   <div class="action" onclick="showPage('plans')">📈<b>Plans</b></div>
   <div class="action" onclick="showPage('deposit')">💳<b>Deposit</b></div>
   <div class="action" onclick="showPage('withdraw')">🏦<b>Withdraw</b></div>
-  <div class="action" onclick="showPage('referral')">👥<b>Referrals</b></div>
+  <div class="action" onclick="showPage('referral')">👥<b>Referral</b></div>
   <div class="action" onclick="showPage('history')">📋<b>History</b></div>
   <div class="action" onclick="showPage('support')">🎧<b>Support</b></div>
  </div>
-
- <div class="notice">
-  Welcome to GROVANTA. Explore our platform and read all investment terms before making financial decisions.
+ <div class="card">
+  <div class="row"><h3>Recent Activity</h3><span class="badge">Demo</span></div>
+  <p class="muted">No verified transactions available yet.</p>
  </div>
 </section>
 
-<!-- PLANS -->
 <section id="plans" class="page">
- <h2>Investment Plans</h2>
- <p class="muted">Explore available investment products.</p>
-
- <div class="plan">
-  <h3>Tier 1</h3>
-  <div class="price">₦1,500</div>
-  <p class="muted">Example minimum amount. Terms pending.</p>
-  <button class="full" onclick="planInfo('Tier 1')">View Plan</button>
- </div>
-
- <div class="plan">
-  <h3>Popular</h3>
-  <div class="price">₦3,000</div>
-  <p class="muted">Example minimum amount. Terms pending.</p>
-  <button class="full" onclick="planInfo('Popular')">View Plan</button>
- </div>
-
- <div class="plan">
-  <h3>Premier</h3>
-  <div class="price">₦12,000</div>
-  <p class="muted">Example minimum amount. Terms pending.</p>
-  <button class="full" onclick="planInfo('Premier')">View Plan</button>
- </div>
+ <h2>Investment Products</h2>
+ <p class="muted">Example product amounts. No returns are promised.</p>
+ <div id="planList"></div>
+ <div class="notice">Each investment product must have documented risks, fees, terms and independently verified returns before real-money activation.</div>
 </section>
 
-<!-- DEPOSIT -->
 <section id="deposit" class="page">
  <h2>Deposit Request</h2>
  <div class="card">
   <label>Amount (₦)</label>
-  <input id="depositAmount" type="number" placeholder="Enter amount">
-  <label>Payment Method</label>
-  <select id="paymentMethod">
-   <option>Bank Transfer</option>
-   <option>Moniepoint</option>
-   <option>PalmPay</option>
-   <option>Kuda</option>
-  </select>
-  <button class="full" onclick="demoAction('Deposit request')">Continue</button>
+  <input id="depAmount" type="number" min="1" placeholder="Enter amount">
+  <label>Payment method</label>
+  <select id="depMethod"><option>Bank Transfer</option><option>Moniepoint</option><option>PalmPay</option><option>Kuda</option></select>
+  <button class="full" onclick="submitDemo('Deposit')">Submit Demo Request</button>
  </div>
- <div class="notice">Demo only. No money is collected or transferred.</div>
 </section>
 
-<!-- WITHDRAWAL -->
 <section id="withdraw" class="page">
  <h2>Withdrawal Request</h2>
  <div class="card">
-  <label>Bank Name</label>
-  <input placeholder="Bank name">
-  <label>Account Number</label>
-  <input placeholder="Account number" maxlength="10">
-  <label>Account Name</label>
-  <input placeholder="Account holder name">
-  <label>Amount (₦)</label>
-  <input type="number" placeholder="Enter amount">
-  <button class="full" onclick="demoAction('Withdrawal request')">Submit Request</button>
+  <label>Bank Name</label><input id="bank" placeholder="Bank name">
+  <label>Account Number</label><input id="account" maxlength="10" placeholder="10 digit account number">
+  <label>Account Name</label><input id="accountName" placeholder="Account holder">
+  <label>Amount (₦)</label><input id="withAmount" type="number" placeholder="Amount">
+  <button class="full" onclick="submitDemo('Withdrawal')">Submit Demo Request</button>
  </div>
- <div class="notice">Demo only. No withdrawals are processed.</div>
 </section>
 
-<!-- REFERRALS -->
 <section id="referral" class="page">
  <h2>Referral Centre</h2>
  <div class="card">
-  <p class="muted">Your referral code</p>
-  <h2 style="color:#c28aff">GROVANTA-DEMO</h2>
-  <button onclick="copyReferral()">Copy Code</button>
+  <p class="muted">Demo referral code</p>
+  <h2 style="color:#c49aff">GROVANTA-DEMO</h2>
+  <button onclick="copyCode()">Copy Code</button>
  </div>
- <p class="notice">Referral rewards and eligibility rules will be displayed here.</p>
+ <div class="stats">
+  <div class="stat">Invitations<strong>0</strong></div>
+  <div class="stat">Successful<strong>0</strong></div>
+  <div class="stat">Rewards<strong>₦0</strong></div>
+ </div>
 </section>
 
-<!-- HISTORY -->
 <section id="history" class="page">
  <h2>Transaction History</h2>
- <div class="card">
-  <p>No transactions available.</p>
-  <p class="muted">Verified records will appear here after backend integration.</p>
+ <div class="card" id="historyList">
+  <p class="muted">No transactions available.</p>
  </div>
 </section>
 
-<!-- SUPPORT -->
+<section id="notifications" class="page">
+ <h2>Notifications</h2>
+ <div class="card">
+  <div class="item">🔔 Welcome to GROVANTA. Your demo account is ready.</div>
+  <div class="item">📢 Please read product terms before investing.</div>
+ </div>
+</section>
+
 <section id="support" class="page">
- <h2>Customer Support</h2>
+ <h2>Help & Support</h2>
  <div class="card">
-  <label>Subject</label>
-  <input placeholder="Subject">
-  <label>Message</label>
-  <textarea placeholder="Describe your issue"></textarea>
-  <button class="full" onclick="demoAction('Support ticket')">Submit Ticket</button>
+  <label>Subject</label><input id="subject" placeholder="Subject">
+  <label>Message</label><textarea id="message" placeholder="How can we help?"></textarea>
+  <button class="full" onclick="submitDemo('Support ticket')">Submit Demo Ticket</button>
  </div>
 </section>
 
-<!-- PROFILE -->
-<section id="profile" class="page">
- <h2>My Profile</h2>
+<section id="settings" class="page">
+ <h2>Account Settings</h2>
  <div class="card">
-  <h3 id="profileName">GROVANTA User</h3>
-  <p id="profilePhone" class="muted"></p>
-  <button class="full" onclick="logout()">Logout</button>
+  <p>Account name</p><h3 id="settingName"></h3>
+  <p class="muted">Phone number</p><p id="settingPhone"></p>
+  <div class="item">Currency: Nigerian Naira (NGN)</div>
+  <div class="item">Theme: Dark Purple</div>
+  <button class="full" style="margin-top:15px" onclick="logout()">Logout</button>
  </div>
 </section>
 
-<!-- ADMIN PREVIEW -->
 <section id="admin" class="page">
- <h2>Admin Dashboard</h2>
+ <h2>Admin Dashboard Preview</h2>
  <div class="stats">
   <div class="stat">Users<strong>0</strong></div>
   <div class="stat">Deposits<strong>0</strong></div>
   <div class="stat">Withdrawals<strong>0</strong></div>
  </div>
  <div class="card">
-  <h3>Management Modules</h3>
-  <p>👥 User Management</p><br>
-  <p>💳 Deposit Requests</p><br>
-  <p>🏦 Withdrawal Requests</p><br>
-  <p>📊 Investment Products</p><br>
-  <p>⚙️ Platform Settings</p>
+  <h3>Admin Modules</h3>
+  <div class="item">👥 User Management</div>
+  <div class="item">💳 Deposit Requests</div>
+  <div class="item">🏦 Withdrawal Requests</div>
+  <div class="item">📊 Product Management</div>
+  <div class="item">⚙️ Platform Settings</div>
  </div>
- <div class="notice">Admin access must be enforced by secure server-side permissions.</div>
+ <p class="notice">Preview only. Actual admin access must be granted through secure server-side authorization.</p>
 </section>
 
 </div>
@@ -306,13 +205,32 @@ nav button.selected{color:#c28aff}
  <button class="selected" onclick="showPage('home',this)">⌂<br>Home</button>
  <button onclick="showPage('plans',this)">▤<br>Plans</button>
  <button onclick="showPage('history',this)">◷<br>History</button>
- <button onclick="showPage('profile',this)">♙<br>Profile</button>
+ <button onclick="showPage('settings',this)">⚙<br>Settings</button>
 </nav>
 </main>
 
 <script>
 let registering=true;
 let user={name:"",phone:""};
+let activity=[];
+
+const plans=[
+ {name:"Tier 1",amount:1500},
+ {name:"Popular",amount:3000},
+ {name:"Tier 3",amount:5000},
+ {name:"Tier 4",amount:8000},
+ {name:"Premier",amount:12000}
+];
+
+function renderPlans(){
+ document.getElementById('planList').innerHTML=plans.map(p=>`
+ <div class="plan">
+  <h3>${p.name}</h3>
+  <div class="price">₦${p.amount.toLocaleString('en-NG')}</div>
+  <p class="muted">Illustrative starting amount</p>
+  <button class="full" onclick="planDetails('${p.name}')">View Details</button>
+ </div>`).join('');
+}
 
 function toggleAuth(){
  registering=!registering;
@@ -321,71 +239,57 @@ function toggleAuth(){
 }
 
 function authenticate(){
- const phone=document.getElementById('phone').value.trim();
- const password=document.getElementById('password').value;
-
- if(!phone||password.length<8){
-  alert('Enter your phone number and a password of at least 8 characters.');
-  return;
- }
-
+ let phone=document.getElementById('phone').value.trim();
+ let password=document.getElementById('password').value;
+ if(!phone||password.length<8){alert('Enter your phone and a password of at least 8 characters.');return;}
  if(registering){
-  const first=document.getElementById('firstName').value.trim();
-  const last=document.getElementById('lastName').value.trim();
-  if(!first||!last){
-   alert('Enter your first and last name.');
-   return;
-  }
+  let first=document.getElementById('firstName').value.trim();
+  let last=document.getElementById('lastName').value.trim();
+  if(!first||!last){alert('Enter your first and last name.');return;}
   user.name=first+' '+last;
- }else{
-  user.name='GROVANTA Demo User';
- }
-
+ }else{user.name='GROVANTA Demo User';}
  user.phone=phone;
-
  document.getElementById('login').classList.add('hidden');
- document.getElementById('login').classList.remove('active');
  document.getElementById('app').classList.remove('hidden');
-
  document.getElementById('welcome').textContent='Welcome, '+user.name+' 👋';
- document.getElementById('profileName').textContent=user.name;
- document.getElementById('profilePhone').textContent=user.phone;
-
+ document.getElementById('settingName').textContent=user.name;
+ document.getElementById('settingPhone').textContent=user.phone;
  showPage('home');
 }
 
-function showPage(id,button){
+function showPage(id,btn){
  document.querySelectorAll('#app .page').forEach(p=>p.classList.remove('active'));
  document.getElementById(id).classList.add('active');
  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('selected'));
- if(button)button.classList.add('selected');
+ if(btn)btn.classList.add('selected');
  window.scrollTo(0,0);
 }
 
-function demoAction(action){
- alert(action+' is a demonstration only. No transaction has occurred.');
+function planDetails(name){
+ alert(name+' is an example product. Verified terms and risks are not yet configured.');
 }
 
-function planInfo(name){
- alert(name+' plan details will be published after the investment terms are finalized.');
+function submitDemo(type){
+ let item={type:type,date:new Date().toLocaleString()};
+ activity.unshift(item);
+ document.getElementById('historyList').innerHTML=activity.map(a=>`
+ <div class="item"><div class="row"><b>${a.type}</b><span class="badge">Demo only</span></div><p class="muted">${a.date}</p></div>`).join('');
+ alert(type+' demonstration recorded locally. No money moved or request sent.');
 }
 
-function copyReferral(){
- if(navigator.clipboard){
-  navigator.clipboard.writeText('GROVANTA-DEMO')
-  .then(()=>alert('Code copied'));
- }else{
-  alert('Your demo code is GROVANTA-DEMO');
- }
+function copyCode(){
+ navigator.clipboard?.writeText('GROVANTA-DEMO')
+ .then(()=>alert('Demo referral code copied.'))
+ .catch(()=>alert('Code: GROVANTA-DEMO'));
 }
 
 function logout(){
  document.getElementById('app').classList.add('hidden');
  document.getElementById('login').classList.remove('hidden');
- document.getElementById('login').classList.add('active');
 }
-</script>
 
+renderPlans();
+</script>
 </body>
-  </html>
-  
+ </html>
+ 
