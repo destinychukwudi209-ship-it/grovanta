@@ -1,0 +1,153 @@
+
+/* GROVANTA TRANSACTIONS PAGE */
+
+.transactions-container {
+  max-width: 1150px;
+  margin: 40px auto;
+  padding: 0 22px;
+}
+
+.transactions-header {
+  margin-bottom: 30px;
+}
+
+.transactions-header h1 {
+  font-size: 30px;
+  margin: 12px 0;
+}
+
+.transactions-header p {
+  color: #aaa0ba;
+}
+
+.transaction-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.transaction-summary-card {
+  padding: 23px;
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 14px;
+}
+
+.transaction-summary-card p {
+  color: #aaa0ba;
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+.transaction-summary-card h2 {
+  color: #e8d9fa;
+  font-size: 28px;
+}
+
+.transactions-panel {
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.transactions-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.transactions-panel-header h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.transactions-panel-header p {
+  color: #aaa0ba;
+  font-size: 13px;
+}
+
+.transaction-status {
+  padding: 8px 12px;
+  background: #211631;
+  border: 1px solid #49305f;
+  color: #d9c2ff;
+  border-radius: 20px;
+  font-size: 11px;
+}
+
+.transactions-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.transactions-table th {
+  padding: 16px;
+  text-align: left;
+  color: #c9a1f5;
+  font-size: 12px;
+  border-bottom: 1px solid #49305f;
+}
+
+.transactions-table td {
+  padding: 18px 16px;
+  color: #c9bfd5;
+  font-size: 13px;
+  border-bottom: 1px solid #38254d;
+}
+
+.empty-transactions {
+  text-align: center;
+  padding: 45px 15px !important;
+  color: #aaa0ba !important;
+}
+
+.transactions-notice {
+  padding: 18px;
+  margin-top: 25px;
+  background: #211631;
+  border-left: 4px solid #a855f7;
+  border-radius: 10px;
+  color: #c9bfd5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.transactions-back {
+  display: inline-block;
+  margin: 25px 0;
+  color: #c9a1f5;
+}
+
+@media (max-width: 700px) {
+  .transactions-container {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .transactions-header h1 {
+    font-size: 25px;
+  }
+
+  .transaction-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .transactions-panel {
+    padding: 18px;
+  }
+
+  .transactions-panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
