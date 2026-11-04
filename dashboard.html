@@ -6,153 +6,194 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090711">
   <title>GROVANTA | Dashboard</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard.css">
-  <script src="dashboard.js" defer></script>
 </head>
 <body>
 
-<header class="site-header">
-  <a href="index.html" class="logo">GROVANTA<span>.</span></a>
-  <a href="index.html" class="nav-button">Home</a>
-</header>
+<div class="dashboard-layout">
 
-<main class="dashboard-container">
-
-  <section class="dashboard-welcome" id="overview">
-    <span class="eyebrow">USER DASHBOARD</span>
-    <h1>Welcome to GROVANTA</h1>
-    <p>Your account overview and platform activity.</p>
-  </section>
-
-  <section class="dashboard-grid">
-    <article class="dashboard-card">
-      <h3>Main Balance</h3>
-      <div class="amount">₦0.00</div>
-      <p>Account balance</p>
-    </article>
-
-    <article class="dashboard-card">
-      <h3>Task Balance</h3>
-      <div class="amount">₦0.00</div>
-      <p>Task account balance</p>
-    </article>
-
-    <article class="dashboard-card">
-      <h3>Referral Balance</h3>
-      <div class="amount">₦0.00</div>
-      <p>Referral account balance</p>
-    </article>
-  </section>
-
-  <section class="dashboard-menu">
-    <a href="#overview">Overview</a>
-    <a href="#plans">Investment Plans</a>
-    <a href="transactions.html">Transactions</a>
-    <a href="referrals.html">Referrals</a>
-    <a href="notifications.html">Notifications</a>
-    <a href="support.html">Support</a>
-    <a href="profile.html">My Profile</a>
-    <a href="promo-code.html">Promo Codes</a>
-    <a href="deposit.html">Deposits</a>
-    <a href="withdrawal.html">Withdrawals</a>
-  </section>
-
-  <section class="section" id="plans">
-    <div class="section-heading">
-      <span class="eyebrow">PLATFORM PRODUCTS</span>
-      <h2>Investment Plans</h2>
-      <p>Review the five plan levels and their intended duration.</p>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-icon">G</div>
+      <div>
+        <h2>GROVANTA</h2>
+        <span>Invest • Grow • Prosper</span>
+      </div>
     </div>
 
-    <div class="feature-grid">
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-link active">⌂ <span>Dashboard</span></a>
+      <a href="#plans" class="nav-link">◈ <span>Plans</span></a>
+      <a href="#tasks" class="nav-link">▣ <span>Tasks</span></a>
+      <a href="referrals.html" class="nav-link">♧ <span>Referrals</span></a>
+      <a href="transactions.html" class="nav-link">⇄ <span>Transactions</span></a>
+      <a href="notifications.html" class="nav-link">♢ <span>Notifications</span></a>
+      <a href="support.html" class="nav-link">▤ <span>Support Tickets</span></a>
+      <a href="#announcements" class="nav-link">◉ <span>Announcements</span></a>
+      <a href="promo-code.html" class="nav-link">◇ <span>Promo Codes</span></a>
+      <a href="profile.html" class="nav-link">♙ <span>Profile</span></a>
+    </nav>
 
-      <article class="feature-card">
-        <h3>Tier 1</h3>
-        <p>₦1,500</p>
-        <span>30-day plan duration</span>
-      </article>
-
-      <article class="feature-card">
-        <h3>Popular</h3>
-        <p>₦3,000</p>
-        <span>30-day plan duration</span>
-      </article>
-
-      <article class="feature-card">
-        <h3>Tier 3</h3>
-        <p>₦6,000</p>
-        <span>30-day plan duration</span>
-      </article>
-
-      <article class="feature-card">
-        <h3>Tier 4</h3>
-        <p>₦9,000</p>
-        <span>30-day plan duration</span>
-      </article>
-
-      <article class="feature-card">
-        <h3>Premier</h3>
-        <p>₦12,000</p>
-        <span>30-day plan duration</span>
-      </article>
-
+    <div class="referral-box">
+      <div class="gift-icon">🎁</div>
+      <h3>Refer & Connect</h3>
+      <p>Invite friends to discover GROVANTA.</p>
+      <a href="referrals.html" class="referral-button">View Referrals →</a>
     </div>
-  </section>
+  </aside>
 
-  <section class="section" id="task-rules">
-    <div class="section-heading">
-      <span class="eyebrow">PLAN INFORMATION</span>
-      <h2>Task Schedule & Expiry</h2>
-      <p>Intended timing rules for the platform.</p>
-    </div>
+  <main class="main-content">
 
-    <div class="feature-grid">
+    <header class="topbar">
+      <button class="menu-button" id="menuButton" aria-label="Toggle menu">☰</button>
+      <div class="topbar-right">
+        <a href="notifications.html" class="notification-link">♧ <span>Notifications</span></a>
+        <a href="profile.html" class="user-menu">
+          <div class="avatar">G</div>
+          <div>
+            <strong id="userName">GROVANTA Member</strong>
+            <small>Account</small>
+          </div>
+        </a>
+      </div>
+    </header>
 
-      <article class="feature-card">
-        <h3>Plan Duration</h3>
-        <p>30 Days</p>
-        <span>Each plan has a defined expiry date.</span>
-      </article>
+    <section class="welcome-banner">
+      <div class="welcome-text">
+        <p>YOUR PERSONAL DASHBOARD</p>
+        <h1>Welcome back, <span id="welcomeName">Member!</span></h1>
+        <h3>Your GROVANTA account overview.</h3>
+        <p>Stay informed and manage your account in one place.</p>
+      </div>
+      <div class="banner-art">
+        <div class="banner-symbol">✦</div>
+        <h2>Dream Bigger.<br>Grow Together.</h2>
+      </div>
+    </section>
 
-      <article class="feature-card">
-        <h3>Daily Task Cycle</h3>
-        <p>24 Hours</p>
-        <span>One task cycle per 24-hour period.</span>
-      </article>
+    <section class="overview-section">
+      <div class="overview-card purple-card">
+        <div class="card-icon">▣</div>
+        <div>
+          <span>Main Balance</span>
+          <h2>₦0.00</h2>
+          <small>View-only account information</small>
+        </div>
+      </div>
 
-      <article class="feature-card">
-        <h3>Plan Expiry</h3>
-        <p>Day 30</p>
-        <span>Expired plans become locked.</span>
-      </article>
+      <div class="overview-card blue-card">
+        <div class="card-icon">✓</div>
+        <div>
+          <span>Task Balance</span>
+          <h2>₦0.00</h2>
+          <small>View-only account information</small>
+        </div>
+      </div>
 
-      <article class="feature-card">
-        <h3>Task History</h3>
-        <p>Preserved</p>
-        <span>Previous task records remain visible.</span>
-      </article>
+      <div class="overview-card green-card">
+        <div class="card-icon">♧</div>
+        <div>
+          <span>Referral Balance</span>
+          <h2>₦0.00</h2>
+          <small>View-only account information</small>
+        </div>
+      </div>
 
-    </div>
-  </section>
+      <div class="overview-card gold-card">
+        <div class="card-icon">♛</div>
+        <div>
+          <span>Account Status</span>
+          <h2 class="status-text">Active</h2>
+          <small>Account information</small>
+        </div>
+      </div>
+    </section>
 
-  <section class="dashboard-notice">
-    <strong>Platform information</strong>
-    <p>
-      These are planned interface settings, not active financial products.
-      Balances are placeholders. No deposits, withdrawals, investment
-      transactions or rewards are processed. Real financial services
-      require appropriate authorisation and secure infrastructure.
-    </p>
-  </section>
+    <section class="content-panel" id="plans">
+      <div class="section-heading">
+        <div>
+          <h2>✦ Platform Plans</h2>
+          <p>Explore the available plan information.</p>
+        </div>
+      </div>
 
-</main>
+      <div class="plans-grid">
+        <article class="plan-card">
+          <div class="plan-icon">★</div>
+          <h3>Tier 1</h3>
+          <p>Entry Level</p>
+          <span class="plan-label">Plan information</span>
+        </article>
 
-<footer class="site-footer">
-  <a href="index.html" class="logo">GROVANTA<span>.</span></a>
-  <p>Grow Smarter. Build Your Future.</p>
-  <p class="copyright">© 2026 GROVANTA. All rights reserved.</p>
-</footer>
+        <article class="plan-card">
+          <div class="plan-icon">♛</div>
+          <h3>Popular</h3>
+          <p>Standard Level</p>
+          <span class="plan-label">Plan information</span>
+        </article>
 
+        <article class="plan-card">
+          <div class="plan-icon">◆</div>
+          <h3>Premier</h3>
+          <p>Advanced Level</p>
+          <span class="plan-label">Plan information</span>
+        </article>
+
+        <article class="plan-card">
+          <div class="plan-icon">🏆</div>
+          <h3>Elite</h3>
+          <p>Premium Level</p>
+          <span class="plan-label">Plan information</span>
+        </article>
+
+        <article class="plan-card">
+          <div class="plan-icon">🚀</div>
+          <h3>Ultimate</h3>
+          <p>Highest Level</p>
+          <span class="plan-label">Plan information</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="bottom-grid">
+      <div class="content-panel" id="tasks">
+        <div class="section-heading">
+          <div>
+            <h2>▥ Recent Activity</h2>
+            <p>Your latest account updates.</p>
+          </div>
+          <a href="transactions.html">View All →</a>
+        </div>
+        <div class="empty-state">
+          <div>◷</div>
+          <p>No recent activity to display.</p>
+        </div>
+      </div>
+
+      <div class="content-panel" id="announcements">
+        <div class="section-heading">
+          <div>
+            <h2>◉ Latest Announcements</h2>
+            <p>Updates from GROVANTA.</p>
+          </div>
+          <a href="notifications.html">View All →</a>
+        </div>
+        <div id="announcementList" class="empty-state">
+          <div>♢</div>
+          <p>No announcements available.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="dashboard-footer">
+      <p>© 2026 GROVANTA. All rights reserved.</p>
+      <p>Account overview and platform information.</p>
+    </footer>
+
+  </main>
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>
+
