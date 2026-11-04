@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | My Profile</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">GROVANTA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="dashboard-container">
+
+    <section class="dashboard-welcome">
+      <span class="admin-label">ACCOUNT SETTINGS</span>
+      <h1>My Profile</h1>
+      <p>View your personal account information.</p>
+    </section>
+
+    <section class="dashboard-card">
+
+      <h2>Personal Information</h2>
+
+      <form id="profileForm">
+
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="Enter your first name"
+          autocomplete="given-name"
+        >
+
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Enter your last name"
+          autocomplete="family-name"
+        >
+
+        <label for="phone">Phone Number</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="+234"
+          autocomplete="tel"
+          readonly
+        >
+
+        <div class="dashboard-notice">
+          Your registered phone number is protected and cannot be
+          changed from this profile preview.
+        </div>
+
+        <button type="button" onclick="alert('Profile editing will be enabled after secure backend integration.')">
+          Save Changes
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="dashboard-card" style="margin-top:25px;">
+
+      <h2>Account Information</h2>
+
+      <p><strong>Platform:</strong> GROVANTA</p>
+      <p><strong>Account Status:</strong> Not connected</p>
+      <p><strong>Verification:</strong> Not available yet</p>
+      <p><strong>Member Since:</strong> Not available yet</p>
+
+    </section>
+
+    <section class="dashboard-card" style="margin-top:25px;">
+
+      <h2>Security</h2>
+
+      <p>Password management and account security settings will
+      become available after secure backend integration.</p>
+
+      <div class="dashboard-notice">
+        Never share your password or account verification codes.
+      </div>
+
+      <a href="forgot-password.html" class="login-link">
+        Password assistance
+      </a>
+
+    </section>
+
+    <div style="margin-top:25px;">
+      <a href="dashboard.html">← Back to Dashboard</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 GROVANTA. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
