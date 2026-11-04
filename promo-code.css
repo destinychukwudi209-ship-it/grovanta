@@ -1,0 +1,164 @@
+
+.promo-container {
+  max-width: 850px;
+  margin: auto;
+  padding: 45px 6%;
+}
+
+.promo-heading {
+  margin-bottom: 30px;
+}
+
+.promo-tag {
+  color: #b66dff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.promo-heading h1 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.promo-heading p {
+  color: #aaa0ba;
+  line-height: 1.7;
+}
+
+.promo-card {
+  padding: 30px;
+  text-align: center;
+  background: #171225;
+  border: 1px solid #49305f;
+  border-radius: 18px;
+}
+
+.promo-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.promo-card h2 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.promo-card > p {
+  color: #aaa0ba;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.promo-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  text-align: left;
+}
+
+.promo-card label {
+  color: #e8d9fa;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.promo-card input {
+  width: 100%;
+  padding: 16px;
+  color: white;
+  background: #090711;
+  border: 1px solid #49305f;
+  border-radius: 10px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.promo-card input:focus {
+  border-color: #a855f7;
+}
+
+.promo-card button {
+  padding: 15px;
+  color: white;
+  background: linear-gradient(100deg, #8b5cf6, #b66dff);
+  border: none;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#promoStatus {
+  color: #c9a1f5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.promo-history {
+  margin-top: 30px;
+  padding: 25px;
+  background: #171225;
+  border: 1px solid #49305f;
+  border-radius: 16px;
+}
+
+.promo-history h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.promo-empty {
+  padding: 30px 15px;
+  text-align: center;
+  background: #211631;
+  border-radius: 12px;
+}
+
+.promo-empty h3 {
+  margin-bottom: 10px;
+  color: #e8d9fa;
+}
+
+.promo-empty p {
+  color: #aaa0ba;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.promo-notice {
+  margin-top: 25px;
+  padding: 20px;
+  background: #211631;
+  border-left: 4px solid #a855f7;
+  border-radius: 10px;
+  color: #c9bfd5;
+  line-height: 1.7;
+}
+
+.promo-notice h3 {
+  color: white;
+  margin-bottom: 8px;
+}
+
+.promo-back {
+  display: inline-block;
+  margin-top: 25px;
+  color: #c9a1f5;
+}
+
+@media (max-width: 600px) {
+  .promo-container {
+    padding: 30px 5%;
+  }
+
+  .promo-heading h1 {
+    font-size: 26px;
+  }
+
+  .promo-card {
+    padding: 22px;
+  }
+}
