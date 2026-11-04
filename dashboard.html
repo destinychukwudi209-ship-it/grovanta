@@ -8,6 +8,7 @@
   <title>GROVANTA | Dashboard</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="dashboard.css">
+  <script src="dashboard.js" defer></script>
 </head>
 <body>
 
@@ -18,18 +19,17 @@
 
 <main class="dashboard-container">
 
-  <section class="dashboard-welcome">
+  <section class="dashboard-welcome" id="overview">
     <span class="eyebrow">USER DASHBOARD</span>
     <h1>Welcome to GROVANTA</h1>
     <p>Your account overview and platform activity.</p>
   </section>
 
   <section class="dashboard-grid">
-
     <article class="dashboard-card">
       <h3>Main Balance</h3>
       <div class="amount">₦0.00</div>
-      <p>Available account balance</p>
+      <p>Account balance</p>
     </article>
 
     <article class="dashboard-card">
@@ -43,7 +43,6 @@
       <div class="amount">₦0.00</div>
       <p>Referral account balance</p>
     </article>
-
   </section>
 
   <section class="dashboard-menu">
@@ -57,17 +56,13 @@
     <a href="#settings">Settings</a>
   </section>
 
-  <section class="dashboard-notice">
-    <strong>Account information</strong>
-    <p>This dashboard is a frontend interface. Live account balances and financial transactions require a secured backend connection and applicable regulatory approvals.</p>
-  </section>
-
   <section class="section" id="plans">
     <div class="section-heading">
       <span class="eyebrow">PLATFORM PRODUCTS</span>
       <h2>Investment Plans</h2>
-      <p>Explore available plan information and terms.</p>
+      <p>Review plan information, fees and associated risks.</p>
     </div>
+
     <div class="feature-grid">
       <article class="feature-card">
         <h3>Tier 1</h3>
@@ -86,6 +81,11 @@
         <p>₦12,000</p>
       </article>
     </div>
+  </section>
+
+  <section class="dashboard-notice">
+    <strong>Platform information</strong>
+    <p>This interface is not yet connected to a live financial backend. Balances are placeholders. No deposits, withdrawals or investment transactions are processed here.</p>
   </section>
 
 </main>
