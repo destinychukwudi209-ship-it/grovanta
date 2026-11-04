@@ -1,0 +1,111 @@
+
+/* GROVANTA PROFILE PAGE */
+
+.profile-container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.profile-header {
+  margin-bottom: 30px;
+}
+
+.profile-header h1 {
+  font-size: 30px;
+  margin: 12px 0;
+}
+
+.profile-header p {
+  color: #aaa0ba;
+}
+
+.profile-card {
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 22px;
+}
+
+.profile-card h2 {
+  font-size: 20px;
+  margin-bottom: 22px;
+  color: #e8d9fa;
+}
+
+.profile-form {
+  display: grid;
+  gap: 14px;
+}
+
+.profile-form label {
+  color: #d9c2ff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-form input {
+  width: 100%;
+  padding: 14px;
+  background: #090711;
+  border: 1px solid #49305f;
+  border-radius: 9px;
+  color: #fff;
+  outline: none;
+}
+
+.profile-form input:focus {
+  border-color: #a855f7;
+}
+
+.profile-form input[readonly] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.profile-info {
+  display: grid;
+  gap: 15px;
+}
+
+.profile-info p {
+  color: #aaa0ba;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #38254d;
+  font-size: 14px;
+}
+
+.profile-info strong {
+  color: #e8d9fa;
+}
+
+.profile-notice {
+  padding: 16px;
+  background: #211631;
+  border-left: 4px solid #a855f7;
+  border-radius: 9px;
+  color: #c9bfd5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.profile-back {
+  display: inline-block;
+  margin: 12px 0 25px;
+  color: #c9a1f5;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    margin: 25px auto;
+  }
+
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-header h1 {
+    font-size: 25px;
+  }
+}
