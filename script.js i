@@ -1,230 +1,50 @@
 
-/* =====================================
-   GROVANTA V4 - APPLICATION JAVASCRIPT
-===================================== */
+function notify(message) {
+  alert(message);
+}
 
-"use strict";
-
-/* PRODUCT DATA */
-
-const GROVANTA_PRODUCTS = [
-  {
-    id: "tier_1",
-    name: "Tier 1",
-    amount: 1500,
-    status: "Draft"
-  },
-  {
-    id: "popular",
-    name: "Popular",
-    amount: 3000,
-    status: "Draft"
-  },
-  {
-    id: "tier_3",
-    name: "Tier 3",
-    amount: 5000,
-    status: "Draft"
-  },
-  {
-    id: "tier_4",
-    name: "Tier 4",
-    amount: 8000,
-    status: "Draft"
-  },
-  {
-    id: "premier",
-    name: "Premier",
-    amount: 12000,
-    status: "Draft"
-  }
-];
-
-/* PAGE NAVIGATION */
-
-function showPage(pageId, button = null) {
+function showPage(pageId) {
   document.querySelectorAll(".page").forEach(page => {
     page.classList.remove("active");
   });
 
   const selectedPage = document.getElementById(pageId);
 
-  if (!selectedPage) {
-    console.warn("GROVANTA: Page not found:", pageId);
-    return;
+  if (selectedPage) {
+    selectedPage.classList.add("active");
   }
-
-  selectedPage.classList.add("active");
-
-  document.querySelectorAll(".adminNav button").forEach(item => {
-    item.classList.remove("selected");
-  });
-
-  if (button) {
-    button.classList.add("selected");
-  }
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
 }
-
-/* USER DASHBOARD */
 
 function openUser() {
-  showPage("user");
-}
+  const dashboard = document.getElementById("userDashboard");
 
-/* ADMIN PREVIEW */
+  if (dashboard) {
+    showPage("userDashboard");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    notify("The user dashboard will be connected in the next development step.");
+  }
+}
 
 function openAdmin() {
-  showPage("admin");
+  const dashboard = document.getElementById("adminDashboard");
+
+  if (dashboard) {
+    showPage("adminDashboard");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    notify("The admin preview will be connected in a later development step.");
+  }
 }
-
-/* PRODUCT DISPLAY */
-
-function renderProducts() {
-  const productContainer = document.getElementById("productList");
-
-  if (!productContainer) return;
-
-  productContainer.replaceChildren();
-
-  GROVANTA_PRODUCTS.forEach(product => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const heading = document.createElement("h3");
-    heading.textContent = product.name;
-
-    const amount = document.createElement("h2");
-    amount.style.color = "#b66dff";
-    amount.textContent = formatNaira(product.amount);
-
-    const description = document.createElement("p");
-    description.className = "muted";
-    description.textContent = "Illustrative product amount";
-
-    const badge = document.createElement("span");
-    badge.className = "badge";
-    badge.textContent = product.status;
-
-    card.append(heading, amount, description, badge);
-    productContainer.appendChild(card);
-  });
-}
-
-/* CURRENCY FORMAT */
 
 function formatNaira(amount) {
   return new Intl.NumberFormat("en-NG", {
     style: "currency",
     currency: "NGN",
-    maximumFractionDigits: 2
+    maximumFractionDigits: 0
   }).format(amount);
 }
 
-/* ANNOUNCEMENT PREVIEW */
-
-function previewAnnouncement() {
-  const titleInput = document.getElementById("announcementTitle");
-  const messageInput = document.getElementById("announcementMessage");
-  const preview = document.getElementById("announcementPreview");
-
-  if (!titleInput || !messageInput || !preview) return;
-
-  const title = titleInput.value.trim();
-  const message = messageInput.value.trim();
-
-  if (!title || !message) {
-    notify("Please enter an announcement title and message.");
-    return;
-  }
-
-  const card = document.createElement("div");
-  card.className = "card";
-
-  const heading = document.createElement("h3");
-  heading.textContent = title;
-
-  const body = document.createElement("p");
-  body.textContent = message;
-
-  const label = document.createElement("span");
-  label.className = "badge";
-  label.textContent = "Preview only";
-
-  card.append(heading, body, label);
-  preview.replaceChildren(card);
-}
-
-/* DEMO NOTIFICATIONS */
-
-function notify(message) {
-  let notification = document.getElementById("grovantaNotification");
-
-  if (!notification) {
-    notification = document.createElement("div");
-    notification.id = "grovantaNotification";
-
-    Object.assign(notification.style, {
-      position: "fixed",
-      bottom: "95px",
-      left: "50%",
-      transform: "translateX(-50%)",
-      background: "#39215b",
-      color: "#ffffff",
-      padding: "13px 18px",
-      borderRadius: "10px",
-      zIndex: "100",
-      width: "max-content",
-      maxWidth: "90%",
-      fontSize: "13px",
-      textAlign: "center"
-    });
-
-    document.body.appendChild(notification);
-  }
-
-  notification.textContent = message;
-  notification.classList.remove("hidden");
-}
-
-/* USER SEARCH PREVIEW */
-
-function searchUsers() {
-  const searchInput = document.getElementById("userSearch");
-
-  if (!searchInput) return;
-
-  const searchTerm = searchInput.value.trim();
-
-  if (searchTerm.length > 0) {
-    notify("User search will work after Supabase integration.");
-  }
-}
-
-/* DEMO FINANCIAL ACTIONS */
-
-function showFinancialNotice() {
-  notify("Demo only. No real financial transaction was submitted.");
-}
-
-/* FORM HANDLING */
-
-document.addEventListener("submit", function(event) {
-  event.preventDefault();
-  notify("This form is currently a preview.");
-});
-
-/* INITIALIZE APPLICATION */
-
-document.addEventListener("DOMContentLoaded", function() {
-  renderProducts();
-
-  console.log("GROVANTA V4 frontend loaded.");
-  console.log("Backend: Not connected");
-  console.log("Financial transactions: Disabled");
-  console.log("Admin authorization: Pending Supabase");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("GROVANTA landing page loaded.");
 });
