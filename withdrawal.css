@@ -1,0 +1,167 @@
+.withdrawal-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 35px 6%;
+}
+
+.withdrawal-heading {
+  margin-bottom: 25px;
+}
+
+.withdrawal-heading h1 {
+  font-size: 30px;
+  margin: 12px 0;
+}
+
+.withdrawal-heading p {
+  color: #aaa0ba;
+  font-size: 14px;
+}
+
+.section-label {
+  color: #b66dff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.withdrawal-notice {
+  padding: 20px;
+  margin-bottom: 22px;
+  background: #211631;
+  border: 1px solid #49305f;
+  border-left: 4px solid #a855f7;
+  border-radius: 12px;
+}
+
+.withdrawal-notice strong {
+  display: block;
+  color: #e4c8ff;
+  margin-bottom: 8px;
+}
+
+.withdrawal-notice p {
+  color: #c9bfd5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.withdrawal-balance-card {
+  padding: 25px;
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #29163e, #171225);
+  border: 1px solid #69418b;
+  border-radius: 16px;
+}
+
+.withdrawal-balance-card h2 {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.withdrawal-balance-card p,
+.withdrawal-balance-card span {
+  color: #c0b3ce;
+  font-size: 13px;
+}
+
+.withdrawal-balance-card strong {
+  display: block;
+  font-size: 32px;
+  margin: 18px 0 8px;
+}
+
+.withdrawal-card {
+  padding: 24px;
+  margin-bottom: 22px;
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 15px;
+}
+
+.withdrawal-card h2 {
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+.withdrawal-description {
+  color: #aaa0ba;
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.withdrawal-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid #38254d;
+}
+
+.withdrawal-info-row:last-child {
+  border-bottom: none;
+}
+
+.withdrawal-info-row span {
+  color: #aaa0ba;
+  font-size: 13px;
+}
+
+.withdrawal-info-row strong {
+  color: #e8d9fa;
+  font-size: 13px;
+  text-align: right;
+  max-width: 55%;
+}
+
+.withdrawal-empty {
+  padding: 35px 15px;
+  text-align: center;
+  background: #211631;
+  border: 1px dashed #49305f;
+  border-radius: 12px;
+}
+
+.withdrawal-empty h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.withdrawal-empty p {
+  color: #aaa0ba;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.withdrawal-footer {
+  text-align: center;
+  color: #8f829e;
+  font-size: 12px;
+  padding: 20px 0;
+}
+
+@media (max-width: 600px) {
+  .withdrawal-container {
+    padding: 25px 5%;
+  }
+
+  .withdrawal-heading h1 {
+    font-size: 25px;
+  }
+
+  .withdrawal-info-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .withdrawal-info-row strong {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .withdrawal-balance-card strong {
+    font-size: 28px;
+  }
+}
