@@ -1,0 +1,144 @@
+
+/* GROVANTA REFERRAL PAGE */
+
+.referrals-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 22px;
+}
+
+.referrals-header {
+  margin-bottom: 30px;
+}
+
+.referrals-header h1 {
+  font-size: 30px;
+  margin: 12px 0;
+}
+
+.referrals-header p {
+  color: #aaa0ba;
+}
+
+.referral-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.referral-stat-card {
+  padding: 24px;
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 15px;
+}
+
+.referral-stat-card p {
+  color: #aaa0ba;
+  font-size: 13px;
+  margin-bottom: 13px;
+}
+
+.referral-stat-card h2 {
+  font-size: 27px;
+  color: #e8d9fa;
+}
+
+.referral-link-card,
+.referral-history-card {
+  padding: 27px;
+  margin-bottom: 23px;
+  background: #171225;
+  border: 1px solid #38254d;
+  border-radius: 15px;
+}
+
+.referral-link-card h2,
+.referral-history-card h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.referral-link-card p,
+.referral-history-card p {
+  color: #aaa0ba;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.referral-code-display,
+.referral-link-display {
+  padding: 16px;
+  margin: 16px 0 23px;
+  background: #090711;
+  border: 1px solid #49305f;
+  border-radius: 10px;
+  color: #d9c2ff;
+  overflow-wrap: anywhere;
+}
+
+.referral-link-card h3 {
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.referral-link-card button {
+  padding: 13px 20px;
+  background: #8b5cf6;
+  border: none;
+  border-radius: 9px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.referral-link-card button:hover {
+  background: #a66bff;
+}
+
+.referral-empty {
+  padding: 35px 15px;
+  margin-top: 18px;
+  background: #211631;
+  border: 1px dashed #49305f;
+  border-radius: 11px;
+  text-align: center;
+  color: #aaa0ba;
+}
+
+.referral-notice {
+  padding: 18px;
+  background: #211631;
+  border-left: 4px solid #a855f7;
+  border-radius: 10px;
+  color: #c9bfd5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.referral-back {
+  display: inline-block;
+  margin: 25px 0;
+  color: #c9a1f5;
+}
+
+@media (max-width: 700px) {
+  .referrals-container {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .referrals-header h1 {
+    font-size: 25px;
+  }
+
+  .referral-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .referral-link-card,
+  .referral-history-card {
+    padding: 20px;
+  }
+}
