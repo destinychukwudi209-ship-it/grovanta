@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Promo Codes</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="promo-code.css">
+
+  <script src="promo-code.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">GROVANTA</a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </div>
+</header>
+
+<main class="promo-container">
+
+  <section class="promo-heading">
+    <span class="promo-tag">GROVANTA REWARDS</span>
+    <h1>Promo Codes</h1>
+    <p>Have a promo code? Enter it below to check whether it is valid.</p>
+  </section>
+
+  <section class="promo-card">
+    <div class="promo-icon">🎁</div>
+
+    <h2>Redeem a Promo Code</h2>
+
+    <p>
+      Enter your code exactly as provided. Eligible benefits and
+      conditions will be displayed when the secure promo system is connected.
+    </p>
+
+    <form id="promoForm">
+      <label for="promoCode">Your Promo Code</label>
+
+      <input
+        type="text"
+        id="promoCode"
+        name="promoCode"
+        placeholder="ENTER PROMO CODE"
+        maxlength="40"
+        autocomplete="off"
+        required
+      >
+
+      <button type="submit" id="applyPromoButton">
+        Apply Promo Code
+      </button>
+
+      <p id="promoStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="promo-history">
+    <h2>Promo Code History</h2>
+
+    <div id="promoHistory">
+      <div class="promo-empty">
+        <h3>No promo activity yet</h3>
+        <p>Your eligible promo code activity will appear here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo-notice">
+    <h3>Important Information</h3>
+    <p>
+      Promo codes may have expiry dates, eligibility conditions and
+      usage limits. A code is not confirmed as redeemed until the
+      secure backend verifies it.
+    </p>
+  </section>
+
+  <a href="dashboard.html" class="promo-back">
+    ← Back to Dashboard
+  </a>
+
+</main>
+
+</body>
+</html>
