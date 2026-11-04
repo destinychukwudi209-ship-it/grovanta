@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090711">
+  <title>GROVANTA | Create Account</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">GROVANTA<span>.</span></a>
+  <a href="index.html" class="nav-button">Home</a>
+</header>
+
+<main class="auth-container">
+  <section class="auth-card">
+    <span class="eyebrow">WELCOME TO GROVANTA</span>
+    <h1>Create Your Account</h1>
+    <p class="auth-description">Enter your details to get started.</p>
+
+    <form id="registerForm">
+      <label for="firstName">First Name</label>
+      <input id="firstName" name="firstName" type="text"
+        placeholder="Enter your first name" autocomplete="given-name" required>
+
+      <label for="lastName">Last Name</label>
+      <input id="lastName" name="lastName" type="text"
+        placeholder="Enter your last name" autocomplete="family-name" required>
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" name="phone" type="tel"
+        placeholder="+2348012345678" autocomplete="tel" required>
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password"
+        placeholder="Create a password" autocomplete="new-password"
+        minlength="12" required>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword" type="password"
+        placeholder="Enter your password again"
+        autocomplete="new-password" minlength="12" required>
+
+      <label for="promoCode">Referral / Promo Code (Optional)</label>
+      <input id="promoCode" name="promoCode" type="text"
+        placeholder="Enter referral code">
+
+      <p class="form-notice">
+        This registration page is a frontend preview. It does not create
+        a live account or collect financial deposits.
+      </p>
+
+      <button type="submit" class="primary-button auth-submit">
+        Continue
+      </button>
+    </form>
+
+    <p class="auth-login">
+      Already have an account?
+      <a href="login.html">Login</a>
+    </p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <a href="index.html" class="logo">GROVANTA<span>.</span></a>
+  <p>Grow Smarter. Build Your Future.</p>
+</footer>
+
+</body>
+</html>
