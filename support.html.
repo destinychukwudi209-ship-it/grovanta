@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Support Centre</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="support.css">
+  <script src="support.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">GROVANTA</a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </div>
+</header>
+
+<main class="support-container">
+
+  <section class="support-heading">
+    <span class="support-tag">HELP CENTRE</span>
+    <h1>How can we help you?</h1>
+    <p>Send a message to the GROVANTA support team.</p>
+  </section>
+
+  <section class="support-card">
+    <h2>Submit a Support Request</h2>
+    <p class="support-description">
+      Explain the issue you are experiencing. You can also attach a screenshot or image.
+    </p>
+
+    <form id="supportForm">
+
+      <label for="supportSubject">Subject</label>
+      <input
+        type="text"
+        id="supportSubject"
+        placeholder="What do you need help with?"
+        maxlength="100"
+        required
+      >
+
+      <label for="supportCategory">Category</label>
+      <select id="supportCategory" required>
+        <option value="">Choose a category</option>
+        <option value="Account">Account</option>
+        <option value="Login">Login problem</option>
+        <option value="Profile">Profile</option>
+        <option value="Technical">Technical problem</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="supportMessage">Your Message</label>
+      <textarea
+        id="supportMessage"
+        rows="6"
+        maxlength="3000"
+        placeholder="Describe your issue clearly..."
+        required
+      ></textarea>
+
+      <label for="supportImage">Attach an Image (Optional)</label>
+      <div class="upload-area">
+        <span class="upload-icon">📷</span>
+        <p>Select an image from your phone gallery</p>
+        <input
+          type="file"
+          id="supportImage"
+          accept="image/jpeg,image/png,image/webp"
+        >
+        <small>JPEG, PNG or WEBP. Maximum size: 5 MB.</small>
+      </div>
+
+      <div id="imagePreview" class="image-preview" hidden>
+        <img id="previewImage" alt="Selected attachment preview">
+        <button type="button" id="removeImage">Remove Image</button>
+      </div>
+
+      <button type="submit" class="support-submit">
+        Submit Support Request
+      </button>
+
+      <p id="supportStatus" class="support-status" aria-live="polite"></p>
+
+    </form>
+  </section>
+
+  <section class="support-information">
+    <h2>What happens next?</h2>
+    <p>
+      Your support request and any attached image will be made available
+      to the authorised support administrator after secure backend integration.
+    </p>
+    <p>
+      Do not attach passwords, PINs, bank card details or other confidential information.
+    </p>
+  </section>
+
+  <a href="dashboard.html" class="support-back">← Back to Dashboard</a>
+
+</main>
+
+</body>
+</html>
