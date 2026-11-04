@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Transactions</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="transactions.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">GROVANTA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </nav>
+  </header>
+
+  <main class="transactions-container">
+
+    <section class="transactions-header">
+      <span class="admin-label">ACCOUNT ACTIVITY</span>
+      <h1>Transaction History</h1>
+      <p>View your account activity and transaction records.</p>
+    </section>
+
+    <section class="transaction-summary">
+
+      <div class="transaction-summary-card">
+        <p>Total Transactions</p>
+        <h2>0</h2>
+      </div>
+
+      <div class="transaction-summary-card">
+        <p>Completed</p>
+        <h2>0</h2>
+      </div>
+
+      <div class="transaction-summary-card">
+        <p>Pending</p>
+        <h2>0</h2>
+      </div>
+
+    </section>
+
+    <section class="transactions-panel">
+
+      <div class="transactions-panel-header">
+        <div>
+          <h2>All Transactions</h2>
+          <p>Your recent account activity will appear here.</p>
+        </div>
+
+        <span class="transaction-status">Not connected</span>
+      </div>
+
+      <div class="transactions-table-wrapper">
+
+        <table class="transactions-table">
+
+          <thead>
+            <tr>
+              <th>Reference</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td colspan="5" class="empty-transactions">
+                No transaction records available yet.
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+    <div class="transactions-notice">
+      Transaction history will display verified records after
+      secure backend integration. No financial transactions are
+      processed by this page.
+    </div>
+
+    <a href="dashboard.html" class="transactions-back">
+      ← Back to Dashboard
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 GROVANTA. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
