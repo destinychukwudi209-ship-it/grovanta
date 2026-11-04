@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Deposit</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="deposit.css">
+
+  <script src="deposit.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">GROVANTA</a>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="transactions.html">Transactions</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </div>
+</header>
+
+<main class="deposit-container">
+
+  <section class="deposit-heading">
+    <span class="deposit-tag">ACCOUNT FUNDING</span>
+    <h1>Deposit Centre</h1>
+    <p>View deposit instructions and your deposit request information.</p>
+  </section>
+
+  <section class="deposit-card">
+    <h2>New Deposit Request</h2>
+
+    <form id="depositForm">
+
+      <label for="depositAmount">Amount (₦)</label>
+      <input
+        type="number"
+        id="depositAmount"
+        min="1"
+        step="1"
+        placeholder="Enter amount in Naira"
+        required
+      >
+
+      <label for="paymentMethod">Payment Method</label>
+      <select id="paymentMethod" required>
+        <option value="">Select payment method</option>
+        <option value="Bank Transfer">Bank Transfer</option>
+        <option value="Other">Other approved method</option>
+      </select>
+
+      <label for="depositReceipt">Payment Receipt (Optional)</label>
+      <input
+        type="file"
+        id="depositReceipt"
+        accept="image/jpeg,image/png,image/webp"
+      >
+
+      <div id="receiptPreview" class="receipt-preview" hidden>
+        <img id="receiptImage" alt="Deposit receipt preview">
+        <button type="button" id="removeReceipt">Remove Receipt</button>
+      </div>
+
+      <button type="submit" id="depositSubmit">
+        Prepare Deposit Request
+      </button>
+
+      <p id="depositStatus" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="deposit-history">
+    <h2>Deposit History</h2>
+
+    <div id="depositHistory">
+      <p class="deposit-empty">
+        No deposit requests available.
+      </p>
+    </div>
+  </section>
+
+  <section class="deposit-notice">
+    <h3>Important Notice</h3>
+    <p>
+      This page is not connected to a live payment processor.
+      Submitting this form does not transfer money, create a confirmed
+      payment, or change an account balance.
+    </p>
+    <p>
+      Never upload passwords, PINs or bank card security details.
+    </p>
+  </section>
+
+  <a href="dashboard.html" class="deposit-back">
+    ← Back to Dashboard
+  </a>
+
+</main>
+
+</body>
+</html>
