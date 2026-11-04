@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Notifications</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="notifications.css">
+
+  <script src="notifications.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">GROVANTA</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </nav>
+  </header>
+
+  <main class="notifications-container">
+
+    <section class="notifications-header">
+      <span class="admin-label">NOTIFICATION CENTER</span>
+      <h1>Notifications</h1>
+      <p>Stay informed about important GROVANTA updates and announcements.</p>
+    </section>
+
+    <section class="notification-summary">
+
+      <div class="notification-summary-card">
+        <p>Total Notifications</p>
+        <h2 id="totalNotifications">0</h2>
+      </div>
+
+      <div class="notification-summary-card">
+        <p>Unread</p>
+        <h2 id="unreadNotifications">0</h2>
+      </div>
+
+      <div class="notification-summary-card">
+        <p>Announcements</p>
+        <h2 id="announcementCount">0</h2>
+      </div>
+
+    </section>
+
+    <section class="announcement-banner">
+      <div class="announcement-icon">📢</div>
+
+      <div>
+        <h2>Official Announcements</h2>
+        <p>
+          Important messages published by authorised GROVANTA
+          administrators will appear in this section.
+        </p>
+      </div>
+    </section>
+
+    <section class="notifications-panel">
+
+      <div class="notifications-panel-heading">
+        <div>
+          <h2>All Notifications</h2>
+          <p>Your account updates and platform messages.</p>
+        </div>
+
+        <button type="button" id="markAllRead">
+          Mark All as Read
+        </button>
+      </div>
+
+      <div class="notification-tabs">
+        <button class="notification-tab active" data-filter="all">
+          All
+        </button>
+
+        <button class="notification-tab" data-filter="announcement">
+          Announcements
+        </button>
+
+        <button class="notification-tab" data-filter="account">
+          Account Updates
+        </button>
+
+        <button class="notification-tab" data-filter="unread">
+          Unread
+        </button>
+      </div>
+
+      <div id="notificationList" class="notification-list">
+
+        <div class="notification-empty">
+          <div class="empty-icon">🔔</div>
+          <h3>No notifications yet</h3>
+          <p>
+            When an authorised admin publishes an announcement
+            or your account receives an update, it will appear here.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="notification-information">
+      <h2>How announcements work</h2>
+
+      <div class="notification-info-item">
+        <span>01</span>
+        <div>
+          <h3>Admin publishes an announcement</h3>
+          <p>An authorised administrator creates and publishes an official message.</p>
+        </div>
+      </div>
+
+      <div class="notification-info-item">
+        <span>02</span>
+        <div>
+          <h3>Users receive the announcement</h3>
+          <p>The backend distributes the published message to the appropriate user accounts.</p>
+        </div>
+      </div>
+
+      <div class="notification-info-item">
+        <span>03</span>
+        <div>
+          <h3>Users read the message</h3>
+          <p>Users can open announcements and track their read status.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="notification-notice">
+      This notification interface is not connected to live announcements yet.
+      Messages will only appear after the secure backend and administrator
+      publishing system are integrated.
+    </div>
+
+    <a href="dashboard.html" class="notifications-back">
+      ← Back to Dashboard
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 GROVANTA. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
