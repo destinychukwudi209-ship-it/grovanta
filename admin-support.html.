@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Admin Support</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-support.css">
+  <script src="admin-support.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">GROVANTA</a>
+    <nav>
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-support-container">
+
+  <section class="admin-support-heading">
+    <span>ADMINISTRATION</span>
+    <h1>Support Requests</h1>
+    <p>Review user complaints and their attached images.</p>
+  </section>
+
+  <section class="admin-support-stats">
+    <div class="admin-support-stat">
+      <h3 id="totalRequests">0</h3>
+      <p>Total Requests</p>
+    </div>
+
+    <div class="admin-support-stat">
+      <h3 id="pendingRequests">0</h3>
+      <p>Pending</p>
+    </div>
+
+    <div class="admin-support-stat">
+      <h3 id="resolvedRequests">0</h3>
+      <p>Resolved</p>
+    </div>
+  </section>
+
+  <section class="admin-support-card">
+    <h2>Submitted Requests</h2>
+
+    <div class="admin-support-empty" id="supportRequests">
+      <h3>No support requests available</h3>
+      <p>
+        User messages and image attachments will appear here
+        after secure backend integration.
+      </p>
+    </div>
+  </section>
+
+  <p class="admin-support-notice">
+    This is an admin interface preview. Real user requests and
+    uploaded images are not connected yet. Access must be restricted
+    to authorised administrators by the backend.
+  </p>
+
+  <a href="admin.html" class="admin-support-back">
+    ← Back to Admin Dashboard
+  </a>
+
+</main>
+
+</body>
+</html>
