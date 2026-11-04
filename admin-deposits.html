@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GROVANTA | Admin Deposit Management</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-deposits.css">
+
+  <script src="admin-deposits.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">GROVANTA</a>
+    <nav>
+      <a href="admin.html">Admin Dashboard</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </div>
+</header>
+
+<main class="admin-deposits-container">
+
+  <section class="admin-deposits-heading">
+    <span>ADMINISTRATION</span>
+    <h1>Deposit Management</h1>
+    <p>Review deposit requests and payment receipt attachments.</p>
+  </section>
+
+  <section class="admin-deposit-stats">
+    <div class="admin-deposit-stat">
+      <h3 id="totalDeposits">0</h3>
+      <p>Total Requests</p>
+    </div>
+
+    <div class="admin-deposit-stat">
+      <h3 id="pendingDeposits">0</h3>
+      <p>Pending Review</p>
+    </div>
+
+    <div class="admin-deposit-stat">
+      <h3 id="approvedDeposits">0</h3>
+      <p>Approved</p>
+    </div>
+
+    <div class="admin-deposit-stat">
+      <h3 id="rejectedDeposits">0</h3>
+      <p>Rejected</p>
+    </div>
+  </section>
+
+  <section class="admin-deposits-card">
+    <div class="admin-deposits-title">
+      <h2>Deposit Requests</h2>
+
+      <select id="depositFilter">
+        <option value="all">All Requests</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+
+    <div id="adminDepositList">
+      <div class="admin-deposit-empty">
+        <h3>No deposit requests yet</h3>
+        <p>
+          User deposit requests and receipt attachments will appear
+          here after secure backend integration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="admin-deposit-notice">
+    <h3>Security Notice</h3>
+    <p>
+      This page is an administrative interface preview.
+      Actual payment verification, receipt storage and approval
+      permissions require a secure backend and authorised administrators.
+    </p>
+  </section>
+
+  <a href="admin.html" class="admin-deposits-back">
+    ← Back to Admin Dashboard
+  </a>
+
+</main>
+
+</body>
+</html>
