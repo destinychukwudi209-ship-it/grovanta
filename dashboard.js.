@@ -1,0 +1,35 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("GROVANTA dashboard initialized.");
+
+  const sections = [
+    "overview",
+    "plans",
+    "transactions",
+    "referrals",
+    "notifications",
+    "support",
+    "profile",
+    "settings"
+  ];
+
+  sections.forEach(section => {
+    const element = document.getElementById(section);
+
+    if (element) {
+      element.setAttribute("data-dashboard-section", section);
+    }
+  });
+});
+
+function formatDashboardCurrency(amount) {
+  return new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2
+  }).format(amount);
+}
+
+function showDashboardMessage(message) {
+  alert(message);
+}
