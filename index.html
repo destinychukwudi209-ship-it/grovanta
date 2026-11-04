@@ -5,328 +5,194 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090711">
-  <meta name="description" content="GROVANTA - Grow Smarter. Build Your Future.">
   <title>GROVANTA | Grow Smarter</title>
-
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">GROVANTA.</div>
-  <span class="badge">V4 PREVIEW</span>
+<header class="site-header">
+  <a href="#home" class="logo">GROVANTA<span>.</span></a>
+
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#how-it-works">How It Works</a>
+  </nav>
+
+  <a href="#platform" class="nav-button">Enter Demo</a>
 </header>
 
-<main class="container">
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="eyebrow">A SMARTER WAY TO LEARN ABOUT FINANCE</span>
+      <h1>Grow Smarter.<br><span>Build Your Future.</span></h1>
+      <p>
+        Explore a modern financial learning platform.
+        Discover useful tools, understand financial concepts
+        and plan your next steps with confidence.
+      </p>
 
-  <!-- ACCESS SCREEN -->
-  <section id="login" class="page active">
-    <div class="text-center" style="padding:35px 0">
-      <div class="logo" style="font-size:38px">GROVANTA</div>
-      <p class="muted">Grow Smarter. Build Your Future.</p>
-    </div>
-
-    <div class="card">
-      <h2>Welcome to GROVANTA</h2>
-      <p class="muted">Choose an interface to explore.</p>
-
-      <button class="full" style="margin-top:20px" onclick="openUser()">
-        Open User Dashboard
-      </button>
-
-      <button class="full secondary-btn" style="margin-top:12px" onclick="openAdmin()">
-        Open Admin Preview
-      </button>
-    </div>
-
-    <div class="notice">
-      This is a demonstration interface. No real accounts, investments,
-      deposits or withdrawals are processed.
-    </div>
-  </section>
-
-  <!-- USER DASHBOARD -->
-  <section id="user" class="page">
-    <div class="row">
-      <div>
-        <h2>Welcome to GROVANTA</h2>
-        <p class="muted">Your dashboard</p>
-      </div>
-      <span class="badge">Demo account</span>
-    </div>
-
-    <div class="card">
-      <p class="muted">Main Balance</p>
-      <h2>₦0.00</h2>
-      <p class="muted">Illustrative balance only</p>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        Task Balance
-        <strong>₦0</strong>
+      <div class="hero-buttons">
+        <a href="#platform" class="primary-button">Explore Platform</a>
+        <a href="#about" class="secondary-button">Learn More</a>
       </div>
 
-      <div class="stat">
-        Referral Balance
-        <strong>₦0</strong>
-      </div>
-
-      <div class="stat">
-        Deposits
-        <strong>0</strong>
-      </div>
-
-      <div class="stat">
-        Withdrawals
-        <strong>0</strong>
+      <div class="hero-points">
+        <span>✓ Transparent information</span>
+        <span>✓ Learning-focused</span>
+        <span>✓ NGN currency examples</span>
       </div>
     </div>
 
-    <div class="card">
-      <h3>Quick Actions</h3>
-
-      <div class="item row">
-        <span>💳 Deposit</span>
-        <button onclick="showFinancialNotice()">Open</button>
-      </div>
-
-      <div class="item row">
-        <span>🏦 Withdraw</span>
-        <button onclick="showFinancialNotice()">Open</button>
-      </div>
-
-      <div class="item row">
-        <span>👥 Referrals</span>
-        <button onclick="notify('Referral centre is a preview.')">Open</button>
-      </div>
-
-      <div class="item row">
-        <span>🎧 Support</span>
-        <button onclick="notify('Support centre is a preview.')">Open</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <h3>Recent Activity</h3>
-      <p class="muted">No activity available.</p>
-    </div>
-
-    <button class="full secondary-btn" onclick="showPage('login')">
-      Back to Access Screen
-    </button>
-  </section>
-
-  <!-- ADMIN ACCESS PREVIEW -->
-  <section id="admin" class="page">
-    <h2>GROVANTA Administration</h2>
-    <p class="muted">Management interface preview</p>
-
-    <div class="notice">
-      This is not a secure administrator login. Actual administrator
-      permissions will be verified through Supabase later.
-    </div>
-
-    <div class="adminNav">
-      <button onclick="showPage('overview',this)">📊 Overview</button>
-      <button onclick="showPage('users',this)">👥 Users</button>
-      <button onclick="showPage('deposits',this)">💳 Deposits</button>
-      <button onclick="showPage('withdrawals',this)">🏦 Withdrawals</button>
-      <button onclick="showPage('products',this)">📈 Products</button>
-      <button onclick="showPage('referrals',this)">🔗 Referrals</button>
-      <button onclick="showPage('announcements',this)">📢 News</button>
-      <button onclick="showPage('tickets',this)">🎧 Support</button>
-      <button onclick="showPage('settings',this)">⚙️ Settings</button>
-      <button onclick="showPage('logs',this)">📋 Logs</button>
-    </div>
-
-    <button class="full secondary-btn" onclick="showPage('login')">
-      Exit Admin Preview
-    </button>
-  </section>
-
-  <!-- OVERVIEW -->
-  <section id="overview" class="page">
-    <h2>Admin Overview</h2>
-    <p class="muted">Platform statistics preview</p>
-
-    <div class="stats">
-      <div class="stat">Total Users<strong>0</strong></div>
-      <div class="stat">Active Users<strong>0</strong></div>
-      <div class="stat">Deposits<strong>0</strong></div>
-      <div class="stat">Withdrawals<strong>0</strong></div>
-      <div class="stat">Support Tickets<strong>0</strong></div>
-      <div class="stat">Products<strong>5</strong></div>
-      <div class="stat">Suspended Users<strong>0</strong></div>
-      <div class="stat">Pending Reviews<strong>0</strong></div>
-    </div>
-
-    <div class="card">
-      <h3>Platform Health</h3>
-      <div class="item row">
-        <span>Database</span>
-        <span class="badge">Not connected</span>
-      </div>
-      <div class="item row">
-        <span>Authentication</span>
-        <span class="badge">Demo</span>
-      </div>
-      <div class="item row">
-        <span>Payments</span>
-        <span class="badge">Inactive</span>
+    <div class="hero-visual">
+      <div class="glow-circle"></div>
+      <div class="visual-card">
+        <span class="visual-label">GROVANTA OVERVIEW</span>
+        <div class="visual-icon">✦</div>
+        <h2>Plan With Purpose</h2>
+        <p>Learn. Explore. Make informed decisions.</p>
+        <div class="visual-line"></div>
+        <div class="visual-stat">
+          <span>Financial knowledge</span>
+          <strong>Starts here</strong>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- USERS -->
-  <section id="users" class="page">
-    <h2>User Management</h2>
+  <section class="features section" id="about">
+    <div class="section-heading">
+      <span class="eyebrow">WHY GROVANTA</span>
+      <h2>Built Around Smarter Decisions</h2>
+      <p>Explore the tools and information in one simple place.</p>
+    </div>
 
-    <input
-      id="userSearch"
-      type="search"
-      placeholder="Search by name or phone"
-    >
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon">✦</div>
+        <h3>Simple Experience</h3>
+        <p>A clean dashboard designed to make information easy to understand.</p>
+      </article>
 
-    <div class="card">
-      <p class="muted">No real user records available.</p>
-      <p>User records will appear after backend integration.</p>
+      <article class="feature-card">
+        <div class="feature-icon">◈</div>
+        <h3>Clear Information</h3>
+        <p>Understand example products, fees, terms and financial risks.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">↗</div>
+        <h3>Progress Tracking</h3>
+        <p>Explore demonstration tools for tracking your learning progress.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">◎</div>
+        <h3>Helpful Support</h3>
+        <p>Find guidance and answers as you explore the platform.</p>
+      </article>
     </div>
   </section>
 
-  <!-- DEPOSITS -->
-  <section id="deposits" class="page">
-    <h2>Deposit Management</h2>
-
-    <div class="stats">
-      <div class="stat">Pending<strong>0</strong></div>
-      <div class="stat">Approved<strong>0</strong></div>
-      <div class="stat">Rejected<strong>0</strong></div>
-      <div class="stat">Under Review<strong>0</strong></div>
+  <section class="how-section section" id="how-it-works">
+    <div class="section-heading">
+      <span class="eyebrow">GETTING STARTED</span>
+      <h2>Explore GROVANTA in Three Steps</h2>
     </div>
 
-    <div class="card">
-      <p class="muted">No real deposit requests available.</p>
-    </div>
-  </section>
-
-  <!-- WITHDRAWALS -->
-  <section id="withdrawals" class="page">
-    <h2>Withdrawal Management</h2>
-
-    <div class="stats">
-      <div class="stat">Pending<strong>0</strong></div>
-      <div class="stat">Approved<strong>0</strong></div>
-      <div class="stat">Rejected<strong>0</strong></div>
-      <div class="stat">Processing<strong>0</strong></div>
-    </div>
-
-    <div class="card">
-      <p class="muted">No real withdrawal requests available.</p>
+    <div class="steps-grid">
+      <article class="step-card">
+        <span>01</span>
+        <h3>Explore</h3>
+        <p>Discover the platform and its educational features.</p>
+      </article>
+      <article class="step-card">
+        <span>02</span>
+        <h3>Understand</h3>
+        <p>Read product examples and learn about financial risks.</p>
+      </article>
+      <article class="step-card">
+        <span>03</span>
+        <h3>Plan</h3>
+        <p>Use the demo tools to understand financial planning.</p>
+      </article>
     </div>
   </section>
 
-  <!-- PRODUCTS -->
-  <section id="products" class="page">
-    <h2>Investment Products</h2>
+  <section class="products-section section" id="products">
+    <div class="section-heading">
+      <span class="eyebrow">DEMO CATALOGUE</span>
+      <h2>Explore Example Plans</h2>
+      <p>These are sample amounts for interface demonstration only.</p>
+    </div>
 
-    <p class="muted">
-      Illustrative product amounts. No returns are promised.
+    <div class="product-grid">
+      <article class="product-card">
+        <span class="product-tag">DEMO</span>
+        <h3>Tier 1</h3>
+        <strong>₦1,500</strong>
+        <p>Illustrative example</p>
+      </article>
+
+      <article class="product-card popular-card">
+        <span class="product-tag">POPULAR DEMO</span>
+        <h3>Popular</h3>
+        <strong>₦3,000</strong>
+        <p>Illustrative example</p>
+      </article>
+
+      <article class="product-card">
+        <span class="product-tag">DEMO</span>
+        <h3>Tier 3</h3>
+        <strong>₦5,000</strong>
+        <p>Illustrative example</p>
+      </article>
+
+      <article class="product-card">
+        <span class="product-tag">DEMO</span>
+        <h3>Tier 4</h3>
+        <strong>₦8,000</strong>
+        <p>Illustrative example</p>
+      </article>
+
+      <article class="product-card">
+        <span class="product-tag">DEMO</span>
+        <h3>Premier</h3>
+        <strong>₦12,000</strong>
+        <p>Illustrative example</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="notice-section">
+    <h2>Understand Before You Decide</h2>
+    <p>
+      GROVANTA is currently a demonstration project.
+      The sample plans are not offers to invest, and no returns
+      or profits are promised. No real deposits or withdrawals
+      are processed.
     </p>
-
-    <div id="productList"></div>
   </section>
 
-  <!-- REFERRALS -->
-  <section id="referrals" class="page">
-    <h2>Referral Management</h2>
-
-    <div class="card">
-      <div class="item row">
-        <span>Total Referrals</span>
-        <strong>0</strong>
-      </div>
-
-      <div class="item row">
-        <span>Pending Rewards</span>
-        <strong>₦0</strong>
-      </div>
-
-      <div class="item row">
-        <span>Paid Rewards</span>
-        <strong>₦0</strong>
-      </div>
-    </div>
+  <section class="platform-section section" id="platform">
+    <span class="eyebrow">YOUR NEXT STEP</span>
+    <h2>Discover the GROVANTA Dashboard</h2>
+    <p>Explore the demonstration interface and its features.</p>
+    <button class="primary-button" onclick="openUser()">
+      Open User Demo
+    </button>
   </section>
-
-  <!-- ANNOUNCEMENTS -->
-  <section id="announcements" class="page">
-    <h2>Announcements</h2>
-
-    <div class="card">
-      <label for="announcementTitle">Announcement Title</label>
-      <input id="announcementTitle" placeholder="Enter title">
-
-      <label for="announcementMessage">Message</label>
-      <textarea
-        id="announcementMessage"
-        placeholder="Write your announcement"
-        rows="4"
-      ></textarea>
-
-      <button class="full" onclick="previewAnnouncement()">
-        Preview Announcement
-      </button>
-    </div>
-
-    <div id="announcementPreview"></div>
-  </section>
-
-  <!-- SUPPORT -->
-  <section id="tickets" class="page">
-    <h2>Support Tickets</h2>
-
-    <div class="card">
-      <p class="muted">No support tickets available.</p>
-      <p>Support records will appear after backend integration.</p>
-    </div>
-  </section>
-
-  <!-- SETTINGS -->
-  <section id="settings" class="page">
-    <h2>Platform Settings</h2>
-
-    <div class="card">
-      <label>Platform Name</label>
-      <input value="GROVANTA" readonly>
-
-      <label>Currency</label>
-      <input value="NGN - Nigerian Naira" readonly>
-
-      <label>Theme</label>
-      <input value="Dark Purple" readonly>
-
-      <div class="notice">
-        Secure settings will require verified administrator permissions.
-      </div>
-    </div>
-  </section>
-
-  <!-- AUDIT LOGS -->
-  <section id="logs" class="page">
-    <h2>Admin Activity Logs</h2>
-
-    <div class="card">
-      <p class="muted">No verified administrative actions recorded.</p>
-      <p>Server-generated audit records will appear here later.</p>
-    </div>
-  </section>
-
 </main>
 
-<script src="script.js" defer></script>
+<footer class="site-footer">
+  <a href="#home" class="logo">GROVANTA<span>.</span></a>
+  <p>Grow Smarter. Build Your Future.</p>
+  <p class="footer-note">Educational demonstration platform.</p>
+  <p class="copyright">© 2026 GROVANTA. All rights reserved.</p>
+</footer>
 
 </body>
-                                         </html>
-                                         
+</html>
